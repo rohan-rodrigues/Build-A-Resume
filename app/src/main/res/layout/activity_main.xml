@@ -9,10 +9,64 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/loginreg_background"
     tools:context="com.example.rohanrodrigues.build_a_resume.MainActivity">
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:background="@drawable/edittext_style"
+        android:layout_marginTop="100dp"
+        android:id="@+id/etEmail"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Email" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="@drawable/edittext_style"
+        android:layout_marginTop="45dp"
+        android:id="@+id/etPass"
+        android:padding="10dp"
+        android:layout_below="@+id/etEmail"
+        android:layout_alignLeft="@+id/etEmail"
+        android:layout_alignStart="@+id/etEmail"
+        android:inputType="textPassword"
+        android:hint="Password" />
+
+    <TextView
+        android:text="Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:id="@+id/tvLogin"
+        android:textColor="@android:color/white"
+        android:textSize="25sp" />
+
+    <Button
+        android:text="Login"
+        android:textColor="#fff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_style"
+        android:id="@+id/btnLogin" />
+
+    <TextView
+        android:text="Dont have an account? Create one here"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/tvReg"
+        android:layout_below="@+id/btnLogin"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
