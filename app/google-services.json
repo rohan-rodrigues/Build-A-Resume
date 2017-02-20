@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "165282718740",
+    "firebase_url": "https://build-a-resume.firebaseio.com",
+    "project_id": "build-a-resume",
+    "storage_bucket": "build-a-resume.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165282718740:android:e976952569dcf105",
+        "android_client_info": {
+          "package_name": "com.example.rohanrodrigues.build_a_resume"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165282718740-u9mchsdeur2ek64jhodtglimgsh63fnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVpKmrxWpbsvYQUh4fSjOG4p-6mekvj54"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
