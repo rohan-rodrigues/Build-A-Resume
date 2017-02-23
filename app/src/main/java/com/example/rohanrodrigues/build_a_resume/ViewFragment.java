@@ -25,11 +25,12 @@ public class ViewFragment extends Fragment {
 
 
         final ArrayList<Resume> resumes = ((MainUserActivity) getActivity()).getManageResumes().getResumesList();
+        System.out.println(resumes.size());
 
         GridView gridView = (GridView) rootview.findViewById(R.id.gridview);
 
-        ResumeAdapter booksAdapter = new ResumeAdapter(this.getContext(), resumes);
-        gridView.setAdapter(booksAdapter);
+        ResumeAdapter resumeAdapter = new ResumeAdapter(this.getContext(), resumes);
+        gridView.setAdapter(resumeAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,

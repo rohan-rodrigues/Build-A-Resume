@@ -1,5 +1,6 @@
 package com.example.rohanrodrigues.build_a_resume;
 
+import android.media.Image;
 import android.provider.ContactsContract;
 import android.widget.ImageView;
 
@@ -13,32 +14,39 @@ import java.util.HashMap;
 public class Resume {
     private String identifier;
     private ArrayList<PositionExperience> experiences;
-    private ArrayList<VolunteerWork> volunteerWork;
+  //  private ArrayList<VolunteerWork> volunteerWork;
     private ArrayList<Education> education;
-    private ArrayList<String> skills;
+  //  private ArrayList<String> skills;
     private ArrayList<String> interests;
-    private String summary;
-    private ArrayList<TestScore> testScores;
+  //  private String summary;
+  //  private ArrayList<TestScore> testScores;
     private String name;
-    private int age;
+  //  private int age;
     private ContactsContract.Contacts.Photo photo;
     private int imageResource;
     private final String imageUrl;
+    private ImageView image;
+    private String phoneNum, emailAddress, careerObj, profession;
 
-    public Resume(String identifier, int imageResource, String imageUrl) {
+    public Resume(String identifier, String name, String phoneNum, String emailAddress, String careerObj, String profession, int imageResource, String imageUrl) {
         this.identifier = identifier;
         experiences = new ArrayList<>();
-        volunteerWork = new ArrayList<>();
+    //    volunteerWork = new ArrayList<>();
         education = new ArrayList<>();
-        skills = new ArrayList<>();
-        summary = "";
-        testScores = new ArrayList<>();
+     //   skills = new ArrayList<>();
+     //   summary = "";
+    //    testScores = new ArrayList<>();
         interests = new ArrayList<>();
-        age = 0;
-        name = "";
+    //    age = 0;
+        this.name = name;
         photo = null;
+        this.phoneNum = phoneNum;
+        this.emailAddress = emailAddress;
+        this.careerObj = careerObj;
+        this.profession = profession;
         this.imageResource = imageResource;
         this.imageUrl = imageUrl;
+        this.image = null;
     }
 
     public String getIdentifier() {
@@ -73,7 +81,7 @@ public class Resume {
         }
     }
 
-    public ArrayList<VolunteerWork> getVolunteerWork() {
+  /*  public ArrayList<VolunteerWork> getVolunteerWork() {
         return volunteerWork;
     }
 
@@ -87,7 +95,7 @@ public class Resume {
                 volunteerWork.remove(i);
             }
         }
-    }
+    } */
 
     public ArrayList<Education> getEducation() {
         return education;
@@ -105,7 +113,7 @@ public class Resume {
         }
     }
 
-    public ArrayList<String> getSkills() {
+   /* public ArrayList<String> getSkills() {
         return skills;
     }
 
@@ -119,7 +127,7 @@ public class Resume {
                 skills.remove(i);
             }
         }
-    }
+    } */
 
     public ArrayList<String> getInterests() {
         return interests;
@@ -137,7 +145,7 @@ public class Resume {
         interests.add(i);
     }
 
-    public String getSummary() {
+   /* public String getSummary() {
         return summary;
     }
 
@@ -151,7 +159,7 @@ public class Resume {
 
     public void addTestScore(TestScore t) {
         testScores.add(t);
-    }
+    } */
 
     public String getName() {
         return name;
@@ -161,12 +169,44 @@ public class Resume {
         this.name = name;
     }
 
-    public int getAge() {
+  /*  public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
         this.age = age;
+    } */
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public String getCareerObj() {
+        return careerObj;
+    }
+
+    public void setCareerObj(String careerObj) {
+        this.careerObj = careerObj;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
     }
 
     public void setImageResource(int imageResource) {
@@ -179,5 +219,13 @@ public class Resume {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public void setImage(ImageView image) {
+        this.image = image;
+    }
+
+    public ImageView getImage() {
+        return this.image;
     }
 }

@@ -60,11 +60,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         CheckExistance();
-                        if (task.isSuccessful()) {
-                            CheckExistance();
-                        } else {
-                            Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
-                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
                     }
                 }
 

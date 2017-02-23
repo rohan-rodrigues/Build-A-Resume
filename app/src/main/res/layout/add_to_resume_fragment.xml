@@ -1,32 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-  <!--  <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Add"
-        android:textAppearance="?android:attr/textAppearanceLarge"/> -->
-  <ScrollView
+  <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
-      android:layout_height="match_parent">
-
-    <LinearLayout
+      android:layout_height="wrap_content">
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:drawableLeft="@drawable/ic_person"
+        android:id="@+id/resume_title"
+        android:hint="Title"
+        android:layout_gravity="center_horizontal"/>
+  </android.support.design.widget.TextInputLayout>
 
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/common_google_signin_btn_icon_dark_disabled"
+        android:id="@+id/profilePic"
+        android:contentDescription="Profile Picture"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Image"
+        android:id="@+id/imageChanger"
+        android:layout_gravity="center_vertical"/>
 
-  <ImageView
-      android:layout_width="100dp"
-      android:layout_height="100dp"
-      android:src="@mipmap/randomimageTest"/>
+  </LinearLayout>
+
 
   <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
@@ -37,9 +54,10 @@
       android:inputType="textPersonName"
       android:ems="10"
       android:drawableLeft="@drawable/ic_person"
-      android:id="@+id/Nameet"
+      android:id="@+id/Name"
       android:hint="Name" />
   </android.support.design.widget.TextInputLayout>
+
   <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
@@ -49,9 +67,10 @@
       android:inputType="phone"
       android:ems="10"
       android:drawableLeft="@drawable/ic_phone"
-      android:id="@+id/Phoneet"
+      android:id="@+id/Phone"
       android:hint="Phone Number" />
 </android.support.design.widget.TextInputLayout>
+
   <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
@@ -61,9 +80,10 @@
       android:inputType="textEmailAddress"
       android:ems="10"
       android:drawableLeft="@drawable/ic_email"
-      android:id="@+id/Emailet"
+      android:id="@+id/Email"
       android:hint="Email Address" />
     </android.support.design.widget.TextInputLayout>
+
   <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
@@ -73,9 +93,10 @@
       android:inputType="textPersonName"
       android:ems="10"
       android:drawableLeft="@drawable/ic_clipboard"
-      android:id="@+id/Objectiveet"
+      android:id="@+id/Objective"
       android:hint="Career Objective" />
     </android.support.design.widget.TextInputLayout>
+
   <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
@@ -85,9 +106,10 @@
       android:inputType="textPersonName"
       android:ems="10"
       android:drawableLeft="@drawable/ic_profession"
-      android:id="@+id/Professionet"
+      android:id="@+id/Profession"
       android:hint="Profession" />
     </android.support.design.widget.TextInputLayout>
+
   <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
@@ -98,9 +120,10 @@
       android:ems="10"
       android:drawableLeft="@drawable/ic_import_contacts_black_24dp"
       android:drawableRight="@drawable/ic_plus"
-      android:id="@+id/Educationet"
+      android:id="@+id/Education"
       android:hint="Education" />
     </android.support.design.widget.TextInputLayout>
+
   <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
@@ -109,11 +132,12 @@
       android:layout_height="wrap_content"
       android:inputType="textPersonName"
       android:ems="10"
-      android:id="@+id/Experienceet"
+      android:id="@+id/Experience"
       android:drawableLeft="@drawable/ic_folder"
       android:drawableRight="@drawable/ic_plus"
       android:hint="Previous Experience" />
     </android.support.design.widget.TextInputLayout>
+
   <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
@@ -124,9 +148,15 @@
       android:ems="10"
       android:drawableLeft="@drawable/ic_car"
       android:drawableRight="@drawable/ic_plus"
-      android:id="@+id/Activitieset"
+      android:id="@+id/Activities"
       android:hint="Activities &amp; Interests" />
     </android.support.design.widget.TextInputLayout>
+
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Save"
+      android:id="@+id/save_resume"/>
+
     </LinearLayout>
   </ScrollView>
-</LinearLayout>
