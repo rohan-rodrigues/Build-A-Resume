@@ -7,12 +7,14 @@ import android.os.Bundle;
 
 public class MainUserActivity extends AppCompatActivity {
     private ManageResumes mManageResumes;
+    private Resume currentResumeViewFrag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_user);
         mManageResumes = new ManageResumes();
+        currentResumeViewFrag = null;
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
         tabLayout.addTab(tabLayout.newTab().setText("Add"));
@@ -45,5 +47,13 @@ public class MainUserActivity extends AppCompatActivity {
 
     public ManageResumes getManageResumes() {
         return mManageResumes;
+    }
+
+    public void setCurrentResumeForViewFragment(Resume r) {
+        this.currentResumeViewFrag = r;
+    }
+
+    public Resume getCurrentResumeForViewFragment() {
+        return this.currentResumeViewFrag;
     }
 }
