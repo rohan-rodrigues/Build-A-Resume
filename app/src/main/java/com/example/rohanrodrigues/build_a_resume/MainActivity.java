@@ -58,15 +58,13 @@ public class MainActivity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (/*task.isSuccessful()*/true) {
-                     //   CheckExistance();
-                        Intent login = new Intent(MainActivity.this, MainUserActivity.class );
-                        login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(login);
                     if (task.isSuccessful()) {
                         CheckExistance();
-                    } else {
-                        Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
+                        if (task.isSuccessful()) {
+                            CheckExistance();
+                        } else {
+                            Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
+                        }
                     }
                 }
 
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChild(userid)) {
-                    Intent login = new Intent(MainActivity.this, MainUserActivity.class );
+                    Intent login = new Intent(MainActivity.this, MainUserActivity.class);
                     login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(login);
                 }
@@ -92,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
 
 
 }

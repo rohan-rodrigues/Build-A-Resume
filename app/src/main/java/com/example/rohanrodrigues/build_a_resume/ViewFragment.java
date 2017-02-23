@@ -21,12 +21,12 @@ public class ViewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootview =  inflater.inflate(R.layout.view_fragment, container, false);
+        View rootview = inflater.inflate(R.layout.view_fragment, container, false);
 
 
-        final ArrayList<Resume> resumes = ((MainUserActivity)getActivity()).getManageResumes().getResumesList();
+        final ArrayList<Resume> resumes = ((MainUserActivity) getActivity()).getManageResumes().getResumesList();
 
-        GridView gridView = (GridView)rootview.findViewById(R.id.gridview);
+        GridView gridView = (GridView) rootview.findViewById(R.id.gridview);
 
         ResumeAdapter booksAdapter = new ResumeAdapter(this.getContext(), resumes);
         gridView.setAdapter(booksAdapter);
@@ -39,4 +39,5 @@ public class ViewFragment extends Fragment {
         });
 
         return rootview;
+    }
 }

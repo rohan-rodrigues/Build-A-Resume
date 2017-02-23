@@ -46,6 +46,4 @@ public class MainUserActivity extends AppCompatActivity {
     public ManageResumes getManageResumes() {
         return mManageResumes;
     }
-
-    }
 }
