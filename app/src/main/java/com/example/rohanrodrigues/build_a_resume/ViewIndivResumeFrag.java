@@ -14,6 +14,9 @@ public class ViewIndivResumeFrag extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.view_indiv_resume, container, false);
+        View rootview =  inflater.inflate(R.layout.view_indiv_resume, container, false);
+
+
+        return rootview;
     }
 }

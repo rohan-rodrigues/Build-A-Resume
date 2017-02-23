@@ -218,7 +218,7 @@ public class EditIndivResumeFrag extends Fragment {
                     ViewFragment sp = new ViewFragment();
                     android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
                     fragmentManager.beginTransaction()
-                            .replace(R.id.viewIndivResume, sp)
+                            .replace(R.id.editIndivResume, sp)
                             .commit();
                 }
                 else {
