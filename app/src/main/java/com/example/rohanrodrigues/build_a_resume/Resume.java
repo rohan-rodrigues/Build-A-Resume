@@ -1,6 +1,7 @@
 package com.example.rohanrodrigues.build_a_resume;
 
 import android.provider.ContactsContract;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,8 +22,10 @@ public class Resume {
     private String name;
     private int age;
     private ContactsContract.Contacts.Photo photo;
+    private int imageResource;
+    private final String imageUrl;
 
-    public Resume(String identifier) {
+    public Resume(String identifier, int imageResource, String imageUrl) {
         this.identifier = identifier;
         experiences = new ArrayList<>();
         volunteerWork = new ArrayList<>();
@@ -34,6 +37,8 @@ public class Resume {
         age = 0;
         name = "";
         photo = null;
+        this.imageResource = imageResource;
+        this.imageUrl = imageUrl;
     }
 
     public String getIdentifier() {
@@ -162,6 +167,18 @@ public class Resume {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void setImageResource(int imageResource) {
+        this.imageResource = imageResource;
+    }
+
+    public int getImageResource() {
+        return imageResource;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
 }

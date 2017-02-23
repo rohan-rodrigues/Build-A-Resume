@@ -6,11 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainUserActivity extends AppCompatActivity {
+    private ManageResumes mManageResumes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_user);
+
+        mManageResumes = new ManageResumes();
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
@@ -41,4 +44,9 @@ public class MainUserActivity extends AppCompatActivity {
             }
         });
     }
+
+    public ManageResumes getManageResumes() {
+        return mManageResumes;
+    }
+
 }
