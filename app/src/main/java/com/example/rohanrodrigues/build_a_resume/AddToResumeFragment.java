@@ -117,6 +117,10 @@ public class AddToResumeFragment extends Fragment {
                     // Reset editTexts
                     resetFields();
                 }
+                else {
+                    Toast t = Toast.makeText(getContext().getApplicationContext(), "Fill out all the questions", Toast.LENGTH_SHORT);
+                    t.show();
+                }
 
             }
         });

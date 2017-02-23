@@ -58,11 +58,8 @@ public class MainActivity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (/*task.isSuccessful()*/ true) {
-                     //   CheckExistance();
-                        Intent login = new Intent(MainActivity.this, MainUserActivity.class);
-                        login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(login);
+                    if (task.isSuccessful()) {
+                        CheckExistance();
                     } else {
                         Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
                     }
