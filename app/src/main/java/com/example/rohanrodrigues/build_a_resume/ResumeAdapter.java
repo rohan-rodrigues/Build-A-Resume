@@ -48,7 +48,7 @@ public class ResumeAdapter extends BaseAdapter {
         // 2
         if (convertView == null) {
             final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-            convertView = layoutInflater.inflate(R.layout.layout_book, null);
+            convertView = layoutInflater.inflate(R.layout.layout_resume, null);
         }
 
         // 3
