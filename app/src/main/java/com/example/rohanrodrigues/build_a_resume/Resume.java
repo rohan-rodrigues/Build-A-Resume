@@ -180,5 +180,4 @@ public class Resume {
     public String getImageUrl() {
         return imageUrl;
     }
-
 }

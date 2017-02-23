@@ -39,5 +39,4 @@ public class ViewFragment extends Fragment {
         });
 
         return rootview;
-    }
 }
