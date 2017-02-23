@@ -59,7 +59,7 @@ public class ResumeAdapter extends BaseAdapter {
 
         // 4
         imageView.setImageResource(resume.getImageResource());
-        nameTextView.setText(mContext.getString(position));
+        nameTextView.setText(resume.getIdentifier());
         // authorTextView.setText(mContext.getString(resume.getAuthor()));
 
        /* imageViewFavorite.setImageResource(
