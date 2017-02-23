@@ -1,5 +1,6 @@
 package com.example.rohanrodrigues.build_a_resume;
 
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -39,7 +40,8 @@ import static android.app.Activity.RESULT_OK;
  * Created by rohanrodrigues on 2/19/17.
  */
 
-public class AddToResumeFragment extends Fragment {
+public class EditIndivResumeFrag extends Fragment {
+    private Resume currentResume;
     private Button changeImage, saveResume;
     private EditText title, name, phoneNum, emailAddress, careerObj, profession, education, prevExperience, activities;
     private ArrayList<String> Experiences, Educations, Activities;
@@ -50,8 +52,9 @@ public class AddToResumeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootview = inflater.inflate(R.layout.add_to_resume_fragment, container, false);
+        View rootview = inflater.inflate(R.layout.edit_indiv_resume, container, false);
 
+        currentResume = ((MainUserActivity)getActivity()).getCurrentResumeForViewFragment();
         Experiences = new ArrayList<>();
         Educations = new ArrayList<>();
         Activities = new ArrayList<>();
@@ -87,9 +90,9 @@ public class AddToResumeFragment extends Fragment {
         final AlertDialog dialog = builder.create();
 
 
-        profilePic = (ImageView)rootview.findViewById(R.id.profilePic);
+        profilePic = (ImageView)rootview.findViewById(R.id.profilePicUpdate);
 
-        changeImage = (Button) rootview.findViewById(R.id.imageChanger);
+        changeImage = (Button) rootview.findViewById(R.id.imageChangerUpdate);
         changeImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,15 +100,21 @@ public class AddToResumeFragment extends Fragment {
             }
         });
 
-        title = (EditText) rootview.findViewById(R.id.resume_title);
-        name = (EditText) rootview.findViewById(R.id.Name);
-        phoneNum = (EditText) rootview.findViewById(R.id.Phone);
-        emailAddress = (EditText) rootview.findViewById(R.id.Email);
-        careerObj = (EditText) rootview.findViewById(R.id.Objective);
-        profession = (EditText) rootview.findViewById(R.id.Profession);
-        education = (EditText) rootview.findViewById(R.id.Education);
-        prevExperience = (EditText) rootview.findViewById(R.id.Experience);
-        activities = (EditText) rootview.findViewById(R.id.Activities);
+        title = (EditText) rootview.findViewById(R.id.resume_titleUpdate);
+        title.setText(currentResume.getIdentifier());
+        name = (EditText) rootview.findViewById(R.id.NameUpdate);
+        name.setText(currentResume.getName());
+        phoneNum = (EditText) rootview.findViewById(R.id.PhoneUpdate);
+        phoneNum.setText(currentResume.getPhoneNum());
+        emailAddress = (EditText) rootview.findViewById(R.id.EmailUpdate);
+        emailAddress.setText(currentResume.getEmailAddress());
+        careerObj = (EditText) rootview.findViewById(R.id.ObjectiveUpdate);
+        careerObj.setText(currentResume.getCareerObj());
+        profession = (EditText) rootview.findViewById(R.id.ProfessionUpdate);
+        profession.setText(currentResume.getProfession());
+        education = (EditText) rootview.findViewById(R.id.EducationUpdate);
+        prevExperience = (EditText) rootview.findViewById(R.id.ExperienceUpdate);
+        activities = (EditText) rootview.findViewById(R.id.ActivitiesUpdate);
 
         education.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -188,22 +197,29 @@ public class AddToResumeFragment extends Fragment {
                         Activities.add(activities.getText().toString());
                     }
 
-                    Resume r = new Resume(identifier, personName, personPhoneNum, personEmailAddress, personCareer, personProfession, R.drawable.common_full_open_on_phone, "http://www.raywenderlich.com/wp-content/uploads/2016/03/abc.jpg");
-                    r.setProfilePic(profilePic);
+                    currentResume.setIdentifier(identifier);
+                    currentResume.setName(personName);
+                    currentResume.setPhoneNum(personPhoneNum);
+                    currentResume.setEmailAddress(personEmailAddress);
+                    currentResume.setCareerObj(personCareer);
+                    currentResume.setProfession(personProfession);
+                    currentResume.setProfilePic(profilePic);
 
                     for (String s : Educations) {
-                        r.addEducation(s);
+                        currentResume.addEducation(s);
                     }
                     for (String s : Activities) {
-                        r.addInterest(s);
+                        currentResume.addInterest(s);
                     }
                     for (String s : Experiences) {
-                        r.addExperience(s);
+                        currentResume.addExperience(s);
                     }
-                    ((MainUserActivity) getActivity()).getManageResumes().addResume(r);
 
-                    // Reset editTexts
-                    resetFields();
+                    ViewFragment sp = new ViewFragment();
+                    android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.viewIndivResume, sp)
+                            .commit();
                 }
                 else {
                     Toast t = Toast.makeText(getContext().getApplicationContext(), "Fill out all the questions", Toast.LENGTH_SHORT);

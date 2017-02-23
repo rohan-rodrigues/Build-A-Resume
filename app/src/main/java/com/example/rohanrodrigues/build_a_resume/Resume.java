@@ -13,18 +13,21 @@ import java.util.HashMap;
 
 public class Resume {
     private String identifier;
-    private ArrayList<PositionExperience> experiences;
+  //  private ArrayList<PositionExperience> experiences;
+    private ArrayList<String> experiences;
   //  private ArrayList<VolunteerWork> volunteerWork;
-    private ArrayList<Education> education;
+  //  private ArrayList<Education> education;
+    private ArrayList<String> education;
   //  private ArrayList<String> skills;
     private ArrayList<String> interests;
   //  private String summary;
   //  private ArrayList<TestScore> testScores;
     private String name;
   //  private int age;
-    private ContactsContract.Contacts.Photo photo;
     private int imageResource;
-    private final String imageUrl;
+    private ImageView profilePic;
+
+    private String imageUrl;
     private ImageView image;
     private String phoneNum, emailAddress, careerObj, profession;
 
@@ -39,7 +42,6 @@ public class Resume {
         interests = new ArrayList<>();
     //    age = 0;
         this.name = name;
-        photo = null;
         this.phoneNum = phoneNum;
         this.emailAddress = emailAddress;
         this.careerObj = careerObj;
@@ -47,6 +49,7 @@ public class Resume {
         this.imageResource = imageResource;
         this.imageUrl = imageUrl;
         this.image = null;
+        this.profilePic = null;
     }
 
     public String getIdentifier() {
@@ -57,19 +60,11 @@ public class Resume {
         this.identifier = identifier;
     }
 
-    public ContactsContract.Contacts.Photo getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(ContactsContract.Contacts.Photo photo) {
-        this.photo = photo;
-    }
-
-    public ArrayList<PositionExperience> getExperiences() {
+    public ArrayList<String> getExperiences() {
         return experiences;
     }
 
-    public void addExperience(PositionExperience p) {
+    public void addExperience(String p) {
         this.experiences.add(p);
     }
 
@@ -79,6 +74,14 @@ public class Resume {
                 experiences.remove(i);
             }
         }
+    }
+
+    public ImageView getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(ImageView profilePic) {
+        this.profilePic = profilePic;
     }
 
   /*  public ArrayList<VolunteerWork> getVolunteerWork() {
@@ -97,11 +100,11 @@ public class Resume {
         }
     } */
 
-    public ArrayList<Education> getEducation() {
+    public ArrayList<String> getEducation() {
         return education;
     }
 
-    public void addEducation(Education e) {
+    public void addEducation(String e) {
         education.add(e);
     }
 
@@ -228,4 +231,5 @@ public class Resume {
     public ImageView getImage() {
         return this.image;
     }
+
 }

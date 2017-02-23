@@ -58,15 +58,17 @@ public class ResumeAdapter extends BaseAdapter {
         final ImageView imageViewFavorite = (ImageView) convertView.findViewById(R.id.imageview_favorite);
 
         // 4
-        imageView.setImageResource(resume.getImageResource());
+   //     imageView.setImageResource(resume.getImageResource());
         nameTextView.setText(resume.getIdentifier());
-        // authorTextView.setText(mContext.getString(resume.getAuthor()));
+         authorTextView.setText(resume.getName());
 
        /* imageViewFavorite.setImageResource(
                 resume.getIsFavorite() ? R.drawable.star_enabled : R.drawable.star_disabled); */
 
         return convertView;
     }
+
+
 
 }
 

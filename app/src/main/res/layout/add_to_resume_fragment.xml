@@ -136,7 +136,7 @@
       android:drawableLeft="@drawable/ic_folder"
       android:drawableRight="@drawable/ic_plus"
       android:hint="Previous Experience" />
-    </android.support.design.widget.TextInputLayout>
+  </android.support.design.widget.TextInputLayout>
 
   <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
