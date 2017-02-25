@@ -232,4 +232,5 @@ public class Resume {
         return this.image;
     }
 
+
 }

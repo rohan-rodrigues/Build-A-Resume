@@ -13,6 +13,7 @@ public class MainUserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_user);
+
         mManageResumes = new ManageResumes();
         currentResumeViewFrag = null;
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
