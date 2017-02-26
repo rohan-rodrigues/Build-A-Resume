@@ -42,7 +42,13 @@ public class MainActivity extends AppCompatActivity {
         mLoginBtn = (Button)findViewById(R.id.btnLogin);
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
-
+        registerIntent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent logtoreg = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(logtoreg);
+            }
+        });
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
